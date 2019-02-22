@@ -1,0 +1,35 @@
+ext {
+
+    android = [
+            compileSdkVersion: 24,
+            buildToolsVersion: "25.0.0",
+            applicationId    : "io.github.clendy.sample",
+            minSdkVersion    : 14,
+            targetSdkVersion : 24,
+            supportVersion   : "24.2.1",
+            versionCode      : 100,
+            versionName      : "1.0.0"
+    ]
+
+    libraries = [
+            // RecyclerTabLayout
+            recyclertablayout_Code: 103,
+            recyclertablayout_Name: "1.0.3",
+            // MultipleViewPager
+            multipleviewpager_Code: 103,
+            multipleviewpager_Name: "1.0.3"
+    ]
+
+    dependencies = [
+            "junit"               : "junit:junit:4.12",
+            "appcompat-v7"        : "com.android.support:appcompat-v7:${android.supportVersion}",
+            "design"              : "com.android.support:design:${android.supportVersion}",
+            "support-v4"          : "com.android.support:support-v4:${android.supportVersion}",
+            "recyclerview-v7"     : "com.android.support:recyclerview-v7:${android.supportVersion}",
+
+            "v14leanback"         : "io.github.clendy.leanback:v14leanback:1.1.5",
+            "butterknife"         : "com.jakewharton:butterknife:8.4.0",
+            "butterknife-compiler": "com.jakewharton:butterknife-compiler:8.4.0"
+
+    ]
+}

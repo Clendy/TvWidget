@@ -1,0 +1,42 @@
+apply plugin: 'com.android.application'
+apply plugin: 'com.jakewharton.butterknife'
+
+
+def config = rootProject.ext.android
+def library = rootProject.ext.libraries
+def dependency = rootProject.ext.dependencies
+
+android {
+    compileSdkVersion config.compileSdkVersion
+    buildToolsVersion config.buildToolsVersion
+
+    defaultConfig {
+        applicationId config.applicationId
+        minSdkVersion config.minSdkVersion
+        targetSdkVersion config.targetSdkVersion
+        versionCode config.versionCode
+        versionName config.versionName
+
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    testCompile rootProject.ext.dependencies["junit"]
+
+    compile project(':libraries:recyclertablayout')
+    compile project(':libraries:multipleviewpager')
+
+    compile dependency["v14leanback"]
+    compile dependency["butterknife"]
+    annotationProcessor dependency["butterknife-compiler"]
+
+}
